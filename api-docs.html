@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AuraAI Developer REST API Reference with cURL, JavaScript, Python examples and interactive test playground.">
+  <meta property="og:title" content="Developer API Docs — AuraAI Template">
+  <meta property="og:type" content="website">
+  <title>Developer API Docs — AuraAI Template</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-title-i18n="page_title_api">
+  <a href="#api-main" class="skip-link" data-i18n="skip_main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="AuraAI Home">
+        <span class="brand-logo-mark">A</span>
+        <span>AuraAI</span>
+      </a>
+
+      <button type="button" id="mobileMenuBtn" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mainNavLinks" aria-label="Toggle navigation menu" data-i18n="menu_btn">
+        ☰ Menu
+      </button>
+
+      <ul id="mainNavLinks" class="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="workspace.html" data-i18n="nav_workspace">AI Workspace</a></li>
+        <li><a href="api-docs.html" class="active" data-i18n="nav_api">API Docs</a></li>
+        <li><a href="pricing-comparison.html" data-i18n="nav_Enterprise">Enterprise SLA</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button type="button" id="langToggleBtn" class="btn-icon" aria-label="Switch Language RTL or LTR">عربي | RTL</button>
+        <button type="button" id="themeToggleBtn" class="btn-icon" aria-label="Switch color theme">🌙 Dark</button>
+        <a href="workspace.html" class="btn btn-primary" data-i18n="btn_launch">Open Studio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="api-main" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" data-i18n="api_badge">Developer Reference v1.5</span>
+        <h1 class="section-title" data-i18n="api_title">REST API &amp; Quickstart Integration</h1>
+        <p class="section-subtitle" data-i18n="api_subtitle">Connect any frontend or backend service to your AI prompt studio endpoint in minutes with clean JSON payloads.</p>
+      </div>
+
+      <div class="calculator-wrapper">
+        <h2 data-i18n="api_sec1_title">1. Execute Prompt Endpoint</h2>
+        <p class="section-subtitle" data-i18n="api_sec1_desc">Send a structured prompt payload with your preferred tone and model tier. Switch between cURL, JavaScript, and Python examples below.</p>
+
+        <div class="api-endpoint-badge">
+          <span class="http-method">POST</span>
+          <span>https://api.example.com/v1/prompts/execute</span>
+        </div>
+
+        <div class="code-tabs-header">
+          <div class="code-tab-group" role="tablist">
+            <button type="button" class="code-tab-btn active" role="tab" aria-selected="true" data-code-target="codeCurl">cURL</button>
+            <button type="button" class="code-tab-btn" role="tab" aria-selected="false" data-code-target="codeJs">JavaScript (Fetch)</button>
+            <button type="button" class="code-tab-btn" role="tab" aria-selected="false" data-code-target="codePy">Python (Requests)</button>
+          </div>
+          <div class="output-toolbar-actions">
+            <button type="button" id="copyApiSnippetBtn" class="btn btn-outline btn-sm" data-i18n="api_copy_code">Copy Snippet</button>
+            <button type="button" id="tryApiEndpointBtn" class="btn btn-primary btn-sm" data-i18n="api_try_btn">Test Endpoint Live</button>
+          </div>
+        </div>
+
+        <pre id="codeCurl" class="code-output-pre code-panel" role="tabpanel">curl -X POST https://api.example.com/v1/prompts/execute \
+  -H "Authorization: Bearer YOUR_API_TOKEN" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "model": "aura-pro-reasoning",
+    "tone": "executive",
+    "language": "en",
+    "prompt": "Generate a B2B SaaS launch checklist."
+  }'</pre>
+
+        <pre id="codeJs" class="code-output-pre code-panel hidden" role="tabpanel">const response = await fetch("https://api.example.com/v1/prompts/execute", {
+  method: "POST",
+  headers: {
+    "Authorization": "Bearer YOUR_API_TOKEN",
+    "Content-Type": "application/json"
+  },
+  body: JSON.stringify({
+    model: "aura-pro-reasoning",
+    tone: "executive",
+    language: "en",
+    prompt: "Generate a B2B SaaS launch checklist."
+  })
+});
+const data = await response.json();
+console.log(data.output);</pre>
+
+        <pre id="codePy" class="code-output-pre code-panel hidden" role="tabpanel">import requests
+
+res = requests.post(
+    "https://api.example.com/v1/prompts/execute",
+    headers={"Authorization": "Bearer YOUR_API_TOKEN"},
+    json={
+        "model": "aura-pro-reasoning",
+        "tone": "executive",
+        "language": "en",
+        "prompt": "Generate a B2B SaaS launch checklist."
+    },
+    timeout=30,
+)
+print(res.json()["output"])</pre>
+
+        <!-- Live Interactive Playground Response Box -->
+        <div id="apiLiveResponseBox" class="ui-state-box ui-state-success hidden" role="status" aria-live="polite">
+          <strong data-i18n="api_live_title">Live Sandbox Response</strong>
+          <pre id="apiLiveResponsePre" class="code-output-pre"></pre>
+        </div>
+      </div>
+
+      <div class="ui-state-box">
+        <h2 data-i18n="api_sec2_title">2. Standard JSON Response Schema</h2>
+        <pre class="code-output-pre">{
+  "id": "run_9f84b2a1",
+  "status": "completed",
+  "model": "aura-pro-reasoning",
+  "usage": {
+    "prompt_tokens": 42,
+    "completion_tokens": 270,
+    "total_tokens": 312
+  },
+  "latency_ms": 420,
+  "output": "### Structured SaaS Launch Blueprint..."
+}</pre>
+      </div>
+
+      <div class="ui-state-box">
+        <h2 data-i18n="api_sec3_title">3. Rate Limits &amp; HTTP Status Codes</h2>
+        <ul class="pricing-features">
+          <li data-i18n="api_st_200">200 OK — Prompt executed successfully with token usage metadata.</li>
+          <li data-i18n="api_st_400">400 Bad Request — Prompt shorter than 15 characters or invalid JSON.</li>
+          <li data-i18n="api_st_401">401 Unauthorized — Missing or invalid Bearer API token.</li>
+          <li data-i18n="api_st_429">429 Too Many Requests — Plan rate limit exceeded; retry with exponential backoff.</li>
+        </ul>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <span data-i18n="footer_copyright">&copy; 2026 AuraAI Template. All rights reserved.</span>
+      <a href="index.html" data-i18n="back_home">← Return to Main Landing Page</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

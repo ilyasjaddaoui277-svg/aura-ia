@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AuraAI Interactive Prompt Engineering Studio and Workspace Dashboard.">
+  <meta property="og:title" content="AI Prompt Studio &amp; Workspace — AuraAI Template">
+  <meta property="og:type" content="website">
+  <title>AI Prompt Studio &amp; Workspace — AuraAI Template</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-title-i18n="page_title_workspace">
+  <a href="#workspace-main" class="skip-link" data-i18n="skip_main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="AuraAI Home">
+        <span class="brand-logo-mark">A</span>
+        <span>AuraAI</span>
+      </a>
+
+      <button type="button" id="mobileMenuBtn" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mainNavLinks" aria-label="Toggle navigation menu" data-i18n="menu_btn">
+        ☰ Menu
+      </button>
+
+      <ul id="mainNavLinks" class="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="workspace.html" class="active" data-i18n="nav_workspace">AI Workspace</a></li>
+        <li><a href="api-docs.html" data-i18n="nav_api">API Docs</a></li>
+        <li><a href="pricing-comparison.html" data-i18n="nav_Enterprise">Enterprise SLA</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button type="button" id="langToggleBtn" class="btn-icon" aria-label="Switch Language RTL or LTR">عربي | RTL</button>
+        <button type="button" id="themeToggleBtn" class="btn-icon" aria-label="Switch color theme">🌙 Dark</button>
+        <a href="index.html#pricing" class="btn btn-outline" data-i18n="btn_upgrade">Upgrade Plan</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="workspace-main" class="container">
+    <div class="workspace-layout">
+      <!-- Sidebar Filter & Clickable History -->
+      <aside class="workspace-sidebar" aria-label="Prompt Library Filters">
+        <h2 data-i18n="ws_sidebar_title">Prompt Categories</h2>
+        <label for="promptSearchInput" class="sr-only">Search Prompt Templates</label>
+        <input type="search" id="promptSearchInput" class="form-control" placeholder="Search templates (e.g. SEO)...">
+
+        <ul class="category-filter-list">
+          <li><button type="button" class="filter-btn active" data-category="all" data-i18n="ws_cat_all">All Workflows (6)</button></li>
+          <li><button type="button" class="filter-btn" data-category="marketing" data-i18n="ws_cat_mkt">Marketing &amp; SEO (2)</button></li>
+          <li><button type="button" class="filter-btn" data-category="product" data-i18n="ws_cat_prod">Product &amp; SaaS (1)</button></li>
+          <li><button type="button" class="filter-btn" data-category="support" data-i18n="ws_cat_sup">Customer Support (1)</button></li>
+          <li><button type="button" class="filter-btn" data-category="engineering" data-i18n="ws_cat_eng">Engineering &amp; Code (2)</button></li>
+        </ul>
+
+        <div class="ui-state-box">
+          <div class="output-toolbar">
+            <strong data-i18n="ws_history_title">Recent Simulations</strong>
+            <button type="button" id="clearHistoryBtn" class="btn btn-outline btn-sm" data-i18n="ws_history_clear">Clear</button>
+          </div>
+          <ul id="promptHistoryList" class="history-list"></ul>
+        </div>
+      </aside>
+
+      <!-- Main Studio Area -->
+      <section class="workspace-main">
+        <span class="section-badge" data-i18n="ws_badge">Interactive Workspace</span>
+        <h1 data-i18n="ws_title">AI Prompt Engineering Studio</h1>
+        <p class="section-subtitle" data-i18n="ws_subtitle">Select a verified template below or write your own prompt to test live token counting, creativity control, copy/export, and clickable run history.</p>
+
+        <!-- Prompt Library Cards (6 Balanced Workflows) -->
+        <div class="prompt-card-grid">
+          <article class="prompt-template-card" data-category="marketing">
+            <div>
+              <span class="section-badge" data-i18n="ws_badge_mkt">Marketing &amp; SEO</span>
+              <h3 data-i18n="ws_card1_title">High-Converting Landing Page Copy</h3>
+              <p data-i18n="ws_card1_desc">Generates hero headlines, benefit bullets, and objection-handling FAQs for digital products.</p>
+            </div>
+            <button type="button" class="btn btn-outline use-template-btn" data-i18n="ws_btn_load"
+              data-prompt="Create a conversion-focused landing page blueprint for a B2B AI workflow automation tool targeting e-commerce founders."
+              data-prompt-ar="أنشئ مخطط صفحة هبوط عالية التحويل لأداة أتمتة بالذكاء الاصطناعي تستهدف مؤسسي المتاجر الإلكترونية.">Load Into Studio</button>
+          </article>
+
+          <article class="prompt-template-card" data-category="marketing">
+            <div>
+              <span class="section-badge" data-i18n="ws_badge_mkt">Marketing &amp; SEO</span>
+              <h3 data-i18n="ws_card2_title">Technical SEO Content Cluster</h3>
+              <p data-i18n="ws_card2_desc">Builds a 5-part topical authority cluster with search intent mapping and internal linking anchors.</p>
+            </div>
+            <button type="button" class="btn btn-outline use-template-btn" data-i18n="ws_btn_load"
+              data-prompt="Generate a technical SEO content cluster and keyword matrix for a cloud cybersecurity platform."
+              data-prompt-ar="أنشئ خطة محتوى SEO تقني ومصفوفة كلمات مفتاحية لمنصة أمن سيبراني سحابية.">Load Into Studio</button>
+          </article>
+
+          <article class="prompt-template-card" data-category="product">
+            <div>
+              <span class="section-badge" data-i18n="ws_badge_prod">Product &amp; SaaS</span>
+              <h3 data-i18n="ws_card3_title">User Onboarding Email Sequence</h3>
+              <p data-i18n="ws_card3_desc">Drafts a 4-day activation sequence to convert free-trial signups into paid subscribers.</p>
+            </div>
+            <button type="button" class="btn btn-outline use-template-btn" data-i18n="ws_btn_load"
+              data-prompt="Write a 4-part onboarding email sequence for new trial users of our analytics dashboard."
+              data-prompt-ar="اكتب سلسلة من 4 رسائل بريد إلكتروني لتفعيل المشتركين الجدد في التجربة المجانية للوحة التحليلات.">Load Into Studio</button>
+          </article>
+
+          <article class="prompt-template-card" data-category="support">
+            <div>
+              <span class="section-badge" data-i18n="ws_badge_sup">Customer Support</span>
+              <h3 data-i18n="ws_card4_title">Empathetic Bug Escalation Reply</h3>
+              <p data-i18n="ws_card4_desc">Creates a clear, reassuring technical support response with SLA timeline and workaround steps.</p>
+            </div>
+            <button type="button" class="btn btn-outline use-template-btn" data-i18n="ws_btn_load"
+              data-prompt="Draft a professional customer support response acknowledging an API rate-limit issue and providing a temporary workaround."
+              data-prompt-ar="صغ رد دعم فني احترافي يوضح سبب مشكلة حد الطلبات في الـ API مع تقديم حل مؤقت وجدول زمني للإصلاح.">Load Into Studio</button>
+          </article>
+
+          <article class="prompt-template-card" data-category="engineering">
+            <div>
+              <span class="section-badge" data-i18n="ws_badge_eng">Engineering &amp; Code</span>
+              <h3 data-i18n="ws_card5_title">REST API OpenAPI 3.1 Spec Builder</h3>
+              <p data-i18n="ws_card5_desc">Generates clean endpoint schemas, request validation rules, and error payload contracts.</p>
+            </div>
+            <button type="button" class="btn btn-outline use-template-btn" data-i18n="ws_btn_load"
+              data-prompt="Design an OpenAPI 3.1 JSON schema for a multi-tenant AI prompt execution endpoint with rate-limit headers."
+              data-prompt-ar="صمم مخطط OpenAPI 3.1 قياسي لنقطة تنفيذ أوامر ذكاء اصطناعي مع ترويسات حد الطلبات ومعالجة الأخطاء.">Load Into Studio</button>
+          </article>
+
+          <article class="prompt-template-card" data-category="engineering">
+            <div>
+              <span class="section-badge" data-i18n="ws_badge_eng">Engineering &amp; Code</span>
+              <h3 data-i18n="ws_card6_title">Automated Code Review &amp; Security Checklist</h3>
+              <p data-i18n="ws_card6_desc">Audits frontend and backend pull requests for performance bottlenecks and XSS/CSRF risks.</p>
+            </div>
+            <button type="button" class="btn btn-outline use-template-btn" data-i18n="ws_btn_load"
+              data-prompt="Create a strict security and performance code review checklist for a vanilla ES6 frontend and REST API backend."
+              data-prompt-ar="أنشئ قائمة فحص أمان وأداء صارمة لمراجعة أكواد الواجهة الأمامية وواجهة REST API قبل الإطلاق.">Load Into Studio</button>
+          </article>
+        </div>
+
+        <!-- Actionable Empty State -->
+        <div id="workspaceEmptyState" class="ui-state-box hidden" role="status" aria-live="polite">
+          <h3 data-i18n="ws_empty_title">No Matching Prompt Templates Found</h3>
+          <p data-i18n="ws_empty_desc">We could not find any templates matching your search criteria. Try clearing the search box or resetting your filters.</p>
+          <div class="empty-state-actions">
+            <button type="button" id="resetFiltersBtn" class="btn btn-outline btn-sm" data-i18n="ws_reset_filters">Reset Search &amp; Filters</button>
+          </div>
+        </div>
+
+        <!-- Prompt Execution Form -->
+        <form id="studioGeneratorForm" class="ui-state-box" novalidate>
+          <h3 data-i18n="ws_sandbox_title">Prompt Execution Sandbox</h3>
+          <div>
+            <label for="studioPromptInput"><strong data-i18n="ws_prompt_label">Prompt Instructions (Minimum 15 characters) *</strong></label>
+            <textarea id="studioPromptInput" class="form-control" rows="4" placeholder="Enter your prompt instructions here or click 'Load Into Studio' on any card above..." required></textarea>
+            <div id="promptMeterBar" class="prompt-meter-bar" aria-live="polite">
+              <span id="promptCharCount">0 chars (min 15)</span>
+              <span id="promptTokenEst">~0 tokens</span>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div>
+              <label for="studioToneSelect"><strong data-i18n="ws_tone_label">Output Tone &amp; Format</strong></label>
+              <select id="studioToneSelect" class="form-control">
+                <option value="executive" data-i18n="tone_exec">Executive Blueprint</option>
+                <option value="technical" data-i18n="tone_tech">Technical Specification</option>
+                <option value="persuasive" data-i18n="tone_pers">Persuasive Conversion Copy</option>
+              </select>
+            </div>
+            <div class="calc-control-group">
+              <label for="studioTempRange">
+                <span data-i18n="ws_temp_label">Creativity (Temperature)</span>
+                <span id="studioTempVal">0.7</span>
+              </label>
+              <input type="range" id="studioTempRange" class="range-slider" min="0.0" max="1.0" step="0.1" value="0.7">
+            </div>
+          </div>
+
+          <div class="studio-action-bar">
+            <button type="submit" id="studioSubmitBtn" class="btn btn-primary" data-i18n="ws_run_btn">Run Prompt Simulation</button>
+            <button type="button" id="clearEditorBtn" class="btn btn-outline" data-i18n="ws_clear_btn">Clear Editor</button>
+            <span class="shortcut-hint" data-i18n="ws_shortcut_hint">Tip: Press Ctrl + Enter to run</span>
+          </div>
+
+          <!-- UI State 1: Loading State -->
+          <div id="studioLoadingState" class="ui-state-box hidden" role="status" aria-live="polite">
+            <strong data-i18n="ws_loading_title">⏳ Processing Prompt...</strong>
+            <span data-i18n="ws_loading_desc">Synthesizing structured response and calculating token metrics.</span>
+          </div>
+
+          <!-- UI State 2: Error / Validation State -->
+          <div id="studioErrorState" class="ui-state-box ui-state-error hidden" role="alert" aria-live="assertive"></div>
+
+          <!-- UI State 3: Populated Output State -->
+          <div id="studioOutputState" class="ui-state-box ui-state-success hidden" role="region" aria-label="Generated AI Output">
+            <div class="output-toolbar">
+              <strong data-i18n="ws_done_title">✅ Generation Complete</strong>
+              <div class="output-toolbar-actions">
+                <button type="button" id="copyOutputBtn" class="btn btn-outline btn-sm" data-i18n="ws_copy_btn">Copy Output</button>
+                <button type="button" id="downloadOutputBtn" class="btn btn-primary btn-sm" data-i18n="ws_download_btn">Download .MD</button>
+              </div>
+            </div>
+            <pre id="studioGeneratedOutput" class="prose-output-pre"></pre>
+          </div>
+        </form>
+      </section>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <span data-i18n="footer_copyright">&copy; 2026 AuraAI Template. All rights reserved.</span>
+      <a href="index.html" data-i18n="back_home">← Return to Main Landing Page</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>

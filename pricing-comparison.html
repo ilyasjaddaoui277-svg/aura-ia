@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="AuraAI Enterprise Architecture, SLA Comparison Matrix, and Security Compliance.">
+  <meta property="og:title" content="Enterprise SLA &amp; Architecture Comparison — AuraAI Template">
+  <meta property="og:type" content="website">
+  <title>Enterprise SLA &amp; Architecture Comparison — AuraAI Template</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-title-i18n="page_title_sla">
+  <a href="#comparison-main" class="skip-link" data-i18n="skip_main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="index.html" class="brand-logo" aria-label="AuraAI Home">
+        <span class="brand-logo-mark">A</span>
+        <span>AuraAI</span>
+      </a>
+
+      <button type="button" id="mobileMenuBtn" class="mobile-menu-toggle" aria-expanded="false" aria-controls="mainNavLinks" aria-label="Toggle navigation menu" data-i18n="menu_btn">
+        ☰ Menu
+      </button>
+
+      <ul id="mainNavLinks" class="nav-links">
+        <li><a href="index.html" data-i18n="nav_home">Home</a></li>
+        <li><a href="workspace.html" data-i18n="nav_workspace">AI Workspace</a></li>
+        <li><a href="api-docs.html" data-i18n="nav_api">API Docs</a></li>
+        <li><a href="pricing-comparison.html" class="active" data-i18n="nav_Enterprise">Enterprise SLA</a></li>
+      </ul>
+
+      <div class="nav-actions">
+        <button type="button" id="langToggleBtn" class="btn-icon" aria-label="Switch Language RTL or LTR">عربي | RTL</button>
+        <button type="button" id="themeToggleBtn" class="btn-icon" aria-label="Switch color theme">🌙 Dark</button>
+        <a href="workspace.html" class="btn btn-primary" data-i18n="btn_launch">Open Studio</a>
+      </div>
+    </div>
+  </header>
+
+  <main id="comparison-main" class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge" data-i18n="sla_badge">Enterprise Technical Matrix</span>
+        <h1 class="section-title" data-i18n="sla_title">Compare Plans, Security &amp; API Throughput</h1>
+        <p class="section-subtitle" data-i18n="sla_subtitle">Detailed specification breakdown for technical decision-makers and procurement teams.</p>
+      </div>
+
+      <div class="table-responsive">
+        <table class="sla-table">
+          <thead>
+            <tr>
+              <th scope="col" data-i18n="sla_col_feat">Feature / Specification</th>
+              <th scope="col" data-i18n="sla_col_starter">Starter ($29/mo)</th>
+              <th scope="col" class="col-highlight" data-i18n="sla_col_pro">Growth Pro ($79/mo)</th>
+              <th scope="col" data-i18n="sla_col_ent">Enterprise ($249/mo)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row" data-i18n="sla_r1_k">Monthly Token Quota</th>
+              <td data-i18n="sla_r1_s">250K Tokens</td>
+              <td class="col-highlight" data-i18n="sla_r1_p">2M Tokens</td>
+              <td data-i18n="sla_r1_e">Custom Unlimited</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="sla_r2_k">Concurrent API Requests</th>
+              <td data-i18n="sla_r2_s">10 req/sec</td>
+              <td class="col-highlight" data-i18n="sla_r2_p">60 req/sec</td>
+              <td data-i18n="sla_r2_e">500+ req/sec</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="sla_r3_k">Data Privacy &amp; Zero-Training</th>
+              <td data-i18n="sla_r3_s">Standard</td>
+              <td class="col-highlight" data-i18n="sla_r3_p">Included</td>
+              <td data-i18n="sla_r3_e">Dedicated Isolated VPC</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="sla_r4_k">RTL / LTR Multilingual Workspace</th>
+              <td data-i18n="sla_r4_s">Included</td>
+              <td class="col-highlight" data-i18n="sla_r4_p">Included</td>
+              <td data-i18n="sla_r4_e">Included + Custom Glossaries</td>
+            </tr>
+            <tr>
+              <th scope="row" data-i18n="sla_r5_k">Uptime SLA Guarantee</th>
+              <td data-i18n="sla_r5_s">99.5%</td>
+              <td class="col-highlight" data-i18n="sla_r5_p">99.9%</td>
+              <td data-i18n="sla_r5_e">99.99% Financially Backed</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <span data-i18n="footer_copyright">&copy; 2026 AuraAI Template. All rights reserved.</span>
+      <a href="index.html" data-i18n="back_home">← Return to Main Landing Page</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js"></script>
+</body>
+</html>
